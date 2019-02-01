@@ -23,12 +23,8 @@ def brute_force_pow():
 		#loop to create the new nonce and test it
 		for increment_nonce in xrange(total_tests):
 			new_nonce = str(increment_nonce)
-			#print("new_nonce: ", new_nonce)
-			#while new_nonce < total_tests:
 			current_nonce = (seed + new_nonce)
-			#print('current_nonce:  ', current_nonce)
 			hashed = hashlib.sha256(current_nonce).hexdigest()
-			#print 'hashed:  ', hashed
 			if hashed.startswith('000000'):
 				print 'POW mined!  It is :', current_nonce
 				print 'Should hash to:  ', hashed
