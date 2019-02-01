@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+#hw completed by Elsa Velazquez and Josh Nguyen 
+
 import math
 import hashlib
 import os
@@ -104,8 +106,7 @@ if __name__ == '__main__':
     pk = ecdsa.decode_pk(pub_key)
     # *******************************************************
     # TODO: Write your code for pairing messages to signatures here
-    i = 0
-    j = 0
+    
     for message in msgs:
         for s in sigs:
             (r_1,s_1) = ecdsa.decode_sig(s, bits=256)
