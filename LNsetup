@@ -1,1 +1,415 @@
 
+**go here for a pdf with pictures:
+
+
+How to restart a LN node
+
+Remove these ghost files
+
+
+
+cd $GOPATH
+
+ btcd --txindex  --simnet --rpcuser=kek --rpcpass=kek 
+
+getrawtransaction RPC
+
+
+
+	I think To include watchtower flags start up btcd with reindex flag but idk how to do that ,or use this command or something similar getmempoolentry "txid"
+:   https://medium.com/chlunetwork/bitcoin-lightning-network-tutorial-how-to-integrate-lightning-to-a-crypto-project-f48743c8644a
+
+
+cd $GOPATH
+ btcd --txindex --simnet --reindex --rpcuser=kek --rpcpass=kek 
+From <https://medium.com/chlunetwork/bitcoin-lightning-network-tutorial-how-to-integrate-lightning-to-a-crypto-project-f48743c8644a> 
+
+
+
+cd $GOPATH/dev/alice	cd $GOPATH/dev/bob	cd $GOPATH/dev/charlie
+		
+rm -r data  log	rm -r data  log	rm -r data  log
+		
+		
+lnd --rpclisten=localhost:10001 --listen=localhost:10011 --restlisten=localhost:8001 --datadir=data --logdir=log --debuglevel=info --bitcoin.simnet --bitcoin.active --bitcoin.node=btcd --btcd.rpcuser=kek --btcd.rpcpass=kek	lnd --rpclisten=localhost:10002 --listen=localhost:10012 --restlisten=localhost:8002 --datadir=data --logdir=log --debuglevel=info --bitcoin.simnet --bitcoin.active --bitcoin.node=btcd --btcd.rpcuser=kek --btcd.rpcpass=kek	lnd --rpclisten=localhost:10003 --listen=localhost:10013 --restlisten=localhost:8003 --datadir=data --logdir=log --debuglevel=info --bitcoin.simnet --bitcoin.active --bitcoin.node=btcd --btcd.rpcuser=kek --btcd.rpcpass=kek
+		
+		
+	NEW WINDOW	
+		NEW WINDOW
+NEW WINDOW		
+	lncli --rpcserver=localhost:10002 --macaroonpath=data/admin.macaroon create	lncli --rpcserver=localhost:10003 --macaroonpath=data/admin.macaroon create
+		
+lncli --rpcserver=localhost:10001 --macaroonpath=data/admin.macaroon create		
+		
+	abstract tribe oval right speed stomach gentle tortoise void private kiss peace obey setup cancel marble bench scatter earn finish alien parrot gun negative	about ticket build fix elder home top stem foot couch change breeze obscure whale version midnight swallow pill plate economy alien dress assist hurdle
+above wife keep gentle habit kick detect pledge typical nuclear pulp problem anger task fee sun uniform amateur spoon robust payment giraffe wave story		
+	 	 
+ 1. able     2. advance   3. oblige     4. settle	 1. absent    2. sauce    3. cross    4. tattoo 	
+ 5. visit    6. chronic   7. accident   8. pact  	 5. child     6. tiny     7. auto     8. tornado	 1. about     2. conduct   3. inherit   4. holiday
+ 9. ignore  10. injury   11. nasty     12. toe   	 9. tube     10. pond    11. tower   12. stay   	 5. daring    6. virus     7. name      8. glove  
+13. flag    14. kingdom  15. great     16. guilt 	13. machine  14. suit    15. mad     16. nothing	 9. cycle    10. monster  11. pizza    12. degree 
+17. alone   18. below    19. result    20. stamp 	17. economy  18. clinic  19. left    20. enrich 	13. someone  14. medal    15. dish     16. test   
+21. still   22. rhythm   23. rotate    24. noble 	21. orange   22. kiwi    23. tattoo  24. number 	17. warm     18. burden   19. moral    20. debris 
+		21. vocal    22. solar    23. hood     24. mule 
+	 lncli-bob getinfo	
+ lncli-alice getinfo		 lncli-charlie getinfo
+		
+		
+		
+		
+lncli --rpcserver=localhost:10001 --macaroonpath=~/gocode/dev/alice/data/chain/bitcoin/simnet/admin.macaroon create	# This is the alias in the ~/.bashrc file	lncli --rpcserver=localhost:10003 --macaroonpath=~/gocode/dev/charlie/data/chain/bitcoin/simnet/admin.macaroon getinfo
+	lncli --rpcserver=localhost:10002 --macaroonpath=~/gocode/dev/bob/data/chain/bitcoin/simnet/admin.macaroon getinfo	
+lncli-alice newaddress np2wkh		lncli-charlie newaddress np2wkh
+	#then to control bob we type	
+Pubkey:	Lncli-bob $command	identity_pubkey": 02ba55e659f2de19bb742864eb70a8ee43822045fe7fd1765a3113a0710f15b498
+"identity_pubkey": 026cb9d10219d0ea90c6aa4dfda0a593377697171d14e01116c553a0b40766187e	lncli-bob newaddress np2wkh	
+		alias": "
+alias": "		02ba55e659f2de19bb74
+026cb9d10219d0ea90c6	identity_pubkey": 0227f29b865fcb0b6a1ba604aa1b0ea6582bc6259843759c60b589185a75af3cb8	
+		
+address": rpropQBFkECHbBUzMTrJezqz5bR5oakkps	alias": "	address": roUKnFbycPdpDyGBnKPq7XW2pb4cYcfdxB
+	0227f29b865fcb0b6a1b
+	
+	address": rVeK6sF1obp4BvscbbCto8VpZoE6H8G6pa
+	
+
+
+
+
+TO GIVE them  MONEY RESTART BTCD 
+
+ MONEY for Alice		
+		
+Btcd- close it down completely ctrl+ c   or Open a new window		
+
+
+cd $GOPATH
+btcd --simnet --txindex --rpcuser=kek --rpcpass=kek --miningaddr=rpropQBFkECHbBUzMTrJezqz5bR5oakkps
+Mine blocksOpen a new tab in btcd window miner windowmine 400 blocks, in her miner window like so:		
+	
+btcctl --simnet --rpcuser=kek --rpcpass=kek generate 400
+
+		
+	
+check segwit from alice’s wallet
+
+btcctl --simnet --rpcuser=kek --rpcpass=kek getblockchaininfo | grep -A 1 segwit
+
+
+
+check alice’s wallet balance from alice wallet
+
+lncli-alice walletbalance
+
+
+
+
+
+MONEY FOR BOB
+
+Close or stop  btcd and reopen it
+
+cd $GOPATH
+
+btcd --txindex --simnet --rpcuser=kek --rpcpass=kek --miningaddr=rVeK6sF1obp4BvscbbCto8VpZoE6H8G6pa
+
+
+mining window like so:
+btcctl --simnet --rpcuser=kek --rpcpass=kek generate 400
+
+
+check segwit from bob's wallet
+
+btcctl --simnet --rpcuser=kek --rpcpass=kek getblockchaininfo | grep -A 1 segwit
+
+check bob's wallet balance from any wallet
+
+lncli-bob walletbalance
+
+
+
+
+MONEY for Charlie
+
+Btcd- close it down completelyOpen a new window
+
+cd $GOPATH
+
+btcd --simnet --txindex --rpcuser=kek --rpcpass=kek --miningaddr=roUKnFbycPdpDyGBnKPq7XW2pb4cYcfdxB
+
+
+
+Miner windowmine 400 blocks, new mining window like so:
+btcctl --simnet --rpcuser=kek --rpcpass=kek generate 400
+
+check segwit from charlie's wallet
+
+btcctl --simnet --rpcuser=kek --rpcpass=kek getblockchaininfo | grep -A 1 segwit
+
+
+
+check charlie's wallet balance from any wallet
+
+lncli-charlie walletbalance
+
+
+
+CONNECTING THE PEER TO PEER NETWORK 
+
+
+
+Open a channel from alice to bob   
+
+User 	In wallet you are connecting to	In wallet you are connecting from			
+alice wallet	lncli-bob getinfo	lncli-alice  connect 0227f29b865fcb0b6a1ba604aa1b0ea6582bc6259843759c60b589185a75af3cb8@localhost:10012			
+					
+		lncli-bob  connect 0231e1f53b03c17687ef40a4e7fe8ad3dddcb537232fb20f88d9ead7d908336391@localhost:10011			
+					
+
+
+
+
+Check connection
+User	In wallet you are connecting to	In wallet you are connecting from		
+bob		lncli-bob listpeers		
+alice	lncli-alice listpeers			
+
+
+
+
+
+Open a channel from bob to charlie   
+
+User 	In wallet you are connecting to	In wallet you are connecting from			
+bob wallet	lncli-charlie getinfo	lncli-bob connect 0263009c90eca398e2664525baf8b43c5f31655ddafb43a3dd50842b4c136f23d6@localhost:10013			
+ 					
+					
+					
+
+
+
+Check connection (bob should have 2 peers)
+
+User		In wallet you are connecting from		
+				
+charlie		lncli-charlie listpeers		
+
+
+Check connection
+User	In wallet you are connecting to	In wallet you are connecting from		
+bob		lncli-bob listpeers		
+charlie	lncli-charlie listpeers			
+
+
+
+
+Check connection (bob should have 2 peers)
+
+User		In wallet you are connecting from		
+				
+bob wallet		lncli-bob listpeers		
+
+
+
+
+
+
+
+
+
+
+
+
+SENDING PAYMENTS
+open a channel from Alice to Bob (alice is funding it)
+Alice is paying Bob
+
+(someone has to block 6 mines and somenoe must be earning a mining reward)
+btcd --testnet --rpcuser=kek --rpcpass=kek generate 6
+
+From <https://dev.lightning.community/guides/installation/> 
+
+
+
+Open a channel
+User 	Who will be in the channel	Person who is funding	Person you are paying	Mine 6 blocks	
+alice	Alice and bob	alice	bob		
+Alice wallet		lncli-alice openchannel --node_key=0227f29b865fcb0b6a1ba604aa1b0ea6582bc6259843759c60b589185a75af3cb8 --local_amt=20000			
+				
+		This is bob's pubkey
+		
+		"funding_txid": 2bffd58c9ceeaa7dc7fee20ec09d823176181a45cac49ffa3c6c6919c7310d80
+Anyone's miner window				btcd --testnet --rpcuser=kek --rpcpass=kek generate 6	
+					
+Alice wallet		lncli-alice listchannels			
+		
+		893902953447424
+
+
+
+charlie Opens a channel to bob
+User 	Who will be in the channel	Person who is funding	Person you are paying	Mine 6 blocks	
+alice	Alice and bob	alice	bob		
+Alice wallet		lncli-charlie openchannel --node_key=023e27170473048abe1bd57e8fe2ea4c5514cdb0dfa330b42e609110831c2d2d8d --local_amt=20000			
+				
+		This is bob's pubkey
+		
+		
+Anyone's miner window				btcctl --simnet --rpcuser=kek --rpcpass=kek generate 6	
+					
+Alice wallet		lncli-alice listchannels			
+		
+		
+
+
+
+
+Bob makes an invoice
+
+
+Make an invoice
+User 					
+Bob wallet	lncli-bob addinvoice --amt=50		lncli-bob addinvoice --amt=50		
+			{
+			        "r_hash": "8adf1fbef6efe606ed2bc59523148542d37981c43a2977f454b222ebc0a42136",
+			        "pay_req": "lnsb500n1pwvlnx2pp53t03l0hkalnqdmftck2jx9y9gtfhnqwy8g5h0az5kg3whs9yyymqdqqcqzpgyvdn6mu74rrugjecj4sjuzv96vyrpnjsaxctuqjht9t4ckwj7e5jv8lgz9rhykc4x5p7aly2vuc4n58mwwamr9tez404sha3n2gwg4splj2uar",
+			        "add_index": 1
+			}
+			
+
+
+
+
+
+Mine 6 blocks so the invoice posts
+
+User 					
+Any miner terminal	btcctl --simnet --rpcuser=kek --rpcpass=kek generate 6				
+
+
+
+
+
+
+
+
+Alice pays Bob on that channel
+
+
+Alice sends payment
+User 					
+Alice wallet	lncli-alice sendpayment --pay_req=lnsb500n1pwvlex2pp5k4enx63j2mzxwq3v7mm7rpqu6symmnw3p02h5aggs7pvyyx9sv9sdqqcqzpg5qadyfc4qk93hny53z6hxcp7dl8kha2qztp5ej8wcfnvwqm2gh45ase745v8h8vqdgmjqrvw4twfnedvxhyh8m75m6j56zh3h63s68qqgmuap4				
+
+
+
+
+Alice closes the channel with Bob 
+
+lncli-alice listchannels
+lncli-alice closechannel --funding_txid=bb6ec0889ef37312bb9ca2741c34178bd94113ccd126f05ebb587d6ee3eb21c4
+
+
+
+lncli-alice listchannels
+
+
+
+
+
+
+1st Fraud Attempt
+Alice and Bob make a few transactions and Alice tries to send an earlier indexed transaction to cheat Bob
+
+
+
+Step 1-- Alice gets Bob's pubkey
+035fdf4a10104a695fdddbdab0f67c0c07b447af05c62d6ff84d279224353127b1
+
+
+
+
+
+Step 2-- She uses his info to fund and open a channel with Bob
+lncli-alice openchannel --node_key=035fdf4a10104a695fdddbdab0f67c0c07b447af05c62d6ff84d279224353127b1 --local_amt=1000000
+
+
+
+
+Verify Alice and Bob have a channel between each other
+
+
+
+
+
+
+
+
+
+
+Bob makes an invoice, note the "add_index" field , it's keeping track of which transaction has happened between them
+
+
+
+
+Alice pays Bob For THIS #2  invoice on that channel
+lncli-alice sendpayment --pay_req=lnsb100u1pwvykuxpp5payec6w2a2vrh5qe8pr5mlxrz443pr0cndgqey443zreymksg9nsdqqcqzpgnjxy8yyyfq45sknzklg5258kasrjdppeuvwyrq9eelcy3q6cmqp4cxnmfaqy085l0upse637yjahguj5ks5qcme4zcz838g8xt7jl8qprr2ala
+Proof it's already paid:
+
+
+
+
+
+
+
+
+Alice's walletbalance at this point:
+
+
+Bob's walletbalance at this point:
+
+
+
+Bob runs ANOTHER invoice, invoice #3
+lnsb100u1pwvyhg8pp5ga7e2en45asw6fg5s23ckp4zapvtqe35lftg3d49xv2r9p77melqdqqcqzpgvz9j4n45zgs0j443uca99t0dhdrrv3pmjvq5h3kd8m7w0m3vt8jze9uu7sgvr22kwv6ges9fmk5x4px7jy43zlnjuc5mjgmv8tg6p5cp7r6tnt
+
+
+
+
+
+Alice tries to resend an old payment to Bob For  invoice #3 to fool him,  on that same channel
+lncli-alice sendpayment --pay_req=lnsb100u1pwvykuxpp5payec6w2a2vrh5qe8pr5mlxrz443pr0cndgqey443zreymksg9nsdqqcqzpgnjxy8yyyfq45sknzklg5258kasrjdppeuvwyrq9eelcy3q6cmqp4cxnmfaqy085l0upse637yjahguj5ks5qcme4zcz838g8xt7jl8qprr2ala
+
+
+
+
+
+Alice wallet balance at this point:
+
+
+
+And then Alice attempts to close the latest channel #3 without paying Bob
+
+
+
+
+
+
+
+
+lncli-alice listchannels
+lncli-alice closechannel --funding_txid=bb6ec0889ef37312bb9ca2741c34178bd94113ccd126f05ebb587d6ee3eb21c4
+lncli-alice listchannels
+
+
+
+
+
+
+She is not able to close without paying and is punished by haing to give Bob all the $ in the channel
+
+
+
+
+
+Bob's new balance:
+
